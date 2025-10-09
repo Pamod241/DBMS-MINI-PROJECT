@@ -96,3 +96,10 @@ CREATE TABLE Admin (
     Email VARCHAR(100)
 );
 
+
+/*Dean table*/
+CREATE TABLE Dean (
+    D_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
