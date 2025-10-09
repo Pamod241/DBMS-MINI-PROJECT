@@ -74,5 +74,17 @@ CREATE TABLE Attendance (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
     );
 
+/*Attendance Handle Table*/
 
+CREATE TABLE Attendance_Handle (
+    Week INT,
+    C_code VARCHAR(10),
+    TO_id VARCHAR(10),
+    Date DATE,
+    Type ENUM('Theory', 'Practical'),
+    PRIMARY KEY (Week, C_code, TO_id),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (TO_id) REFERENCES Technical_Officer(TO_id)
+);
 
