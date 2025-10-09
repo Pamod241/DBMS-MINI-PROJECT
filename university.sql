@@ -138,3 +138,12 @@ CREATE TABLE Common (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no),
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
 );
+
+
+/*Technical Officer Table*/
+
+CREATE TABLE Technical_Officer (
+    TO_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
