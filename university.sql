@@ -88,3 +88,11 @@ CREATE TABLE Attendance_Handle (
     FOREIGN KEY (TO_id) REFERENCES Technical_Officer(TO_id)
 );
 
+/*Admin Table*/
+
+CREATE TABLE Admin (
+    Admin_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
