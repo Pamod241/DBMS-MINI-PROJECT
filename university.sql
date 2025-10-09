@@ -103,3 +103,11 @@ CREATE TABLE Dean (
     Fullname VARCHAR(100),
     Email VARCHAR(100)
 );
+
+/*User table*/
+CREATE TABLE User (
+    User_id VARCHAR(10) PRIMARY KEY,
+    Role ENUM('Admin', 'Dean', 'Lecturer', 'Technical_Officer', 'Student'),
+    Password VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE
+);
