@@ -37,4 +37,13 @@ CREATE TABLE Course (
 );
 
 
+/*Lecturer Table*/
 
+CREATE TABLE Lecturer (
+    Lec_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE,
+    Gender ENUM('Male', 'Female', 'Other'),
+    Dep_id VARCHAR(10),
+    FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+);
