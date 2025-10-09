@@ -25,5 +25,16 @@ CREATE TABLE Student (
 );
 
 
+/*Course Table*/
+
+CREATE TABLE Course (
+    C_code VARCHAR(10) PRIMARY KEY,
+    C_name VARCHAR(100) NOT NULL,
+    Credit INT,
+    Type ENUM('Theory', 'Practical'),
+    Lec_id VARCHAR(10),
+    FOREIGN KEY (Lec_id) REFERENCES Lecturer(Lec_id)
+);
+
 
 
