@@ -47,3 +47,20 @@ CREATE TABLE Lecturer (
     Dep_id VARCHAR(10),
     FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
 );
+
+
+/*Student-Course Relationship*/
+
+CREATE TABLE Stu_Course (
+    C_code VARCHAR(10),
+    Reg_no VARCHAR(15),
+    PRIMARY KEY (C_code, Reg_no),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+);
+
+
+
+
+
