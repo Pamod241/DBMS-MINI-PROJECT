@@ -60,7 +60,19 @@ CREATE TABLE Stu_Course (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
 );
 
+/*Attendance Table*/
 
+CREATE TABLE Attendance (
+    Week INT,
+    Type ENUM('Theory', 'Practical'),
+    Status ENUM('Present', 'Absent', 'Medical'),
+    C_code VARCHAR(10),
+    Reg_no VARCHAR(15),
+    PRIMARY KEY (Week, C_code, Reg_no),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    );
 
 
 
