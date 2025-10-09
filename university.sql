@@ -111,3 +111,17 @@ CREATE TABLE User (
     Password VARCHAR(100) NOT NULL,
     Email VARCHAR(100) UNIQUE
 );
+
+/*marks table*/
+
+CREATE TABLE Mark (
+    C_code VARCHAR(10),
+    Type ENUM('Theory', 'Practical'),
+    Reg_no VARCHAR(15),
+    Grade VARCHAR(5),
+    PRIMARY KEY (C_code, Type, Reg_no),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
