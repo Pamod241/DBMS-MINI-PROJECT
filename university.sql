@@ -158,4 +158,16 @@ CREATE TABLE Quiz (
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+); 
+
+
+/*Project Table*/
+
+CREATE TABLE Project (
+    Reg_no VARCHAR(15),
+    C_code VARCHAR(10),
+    Mark INT,
+    PRIMARY KEY (Reg_no, C_code),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
 );    
