@@ -22,6 +22,7 @@ CREATE TABLE Student (
     Type ENUM('Proper', 'Repeat', 'Suspended'),
     Dep_id VARCHAR(10),
     FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -34,6 +35,7 @@ CREATE TABLE Course (
     Type ENUM('Theory', 'Practical'),
     Lec_id VARCHAR(10),
     FOREIGN KEY (Lec_id) REFERENCES Lecturer(Lec_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -46,6 +48,7 @@ CREATE TABLE Lecturer (
     Gender ENUM('Male', 'Female', 'Other'),
     Dep_id VARCHAR(10),
     FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -140,8 +143,10 @@ CREATE TABLE Common (
     Mid INT,
     End INT,
     PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -162,7 +167,9 @@ CREATE TABLE Quiz (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+    ON DELETE SET NULL ON UPDATE CASCADE
 ); 
 
 
@@ -174,7 +181,9 @@ CREATE TABLE Project (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -186,7 +195,9 @@ CREATE TABLE Assignment (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+ ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
