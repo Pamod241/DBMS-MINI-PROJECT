@@ -98,3 +98,90 @@ CREATE TABLE Admin (
     Email VARCHAR(100)
 );
 
+
+/*Dean table*/
+CREATE TABLE Dean (
+    D_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+/*User table*/
+CREATE TABLE User (
+    User_id VARCHAR(10) PRIMARY KEY,
+    Role ENUM('Admin', 'Dean', 'Lecturer', 'Technical_Officer', 'Student'),
+    Password VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE
+);
+
+/*marks table*/
+
+CREATE TABLE Mark (
+    C_code VARCHAR(10),
+    Type ENUM('Theory', 'Practical'),
+    Reg_no VARCHAR(15),
+    Grade VARCHAR(5),
+    PRIMARY KEY (C_code, Type, Reg_no),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+/*create common table*/
+
+CREATE TABLE Common (
+    Reg_no VARCHAR(15),
+    C_code VARCHAR(10),
+    Mid INT,
+    End INT,
+    PRIMARY KEY (Reg_no, C_code),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no),
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+);
+
+
+/*Technical Officer Table*/
+
+CREATE TABLE Technical_Officer (
+    TO_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+
+/*Quiz Table*/
+
+CREATE TABLE Quiz (
+    Reg_no VARCHAR(15),
+    C_code VARCHAR(10),
+    Mark INT,
+    PRIMARY KEY (Reg_no, C_code),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+); 
+
+
+/*Project Table*/
+
+CREATE TABLE Project (
+    Reg_no VARCHAR(15),
+    C_code VARCHAR(10),
+    Mark INT,
+    PRIMARY KEY (Reg_no, C_code),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+);
+
+
+/*Assignment Table*/
+
+CREATE TABLE Assignment (
+    Reg_no VARCHAR(15),
+    C_code VARCHAR(10),
+    Mark INT,
+    PRIMARY KEY (Reg_no, C_code),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    FOREIGN KEY (C_code) REFERENCES Course(C_code)
+);
