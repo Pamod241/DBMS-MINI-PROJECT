@@ -90,6 +90,7 @@ CREATE TABLE Attendance_Handle (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (TO_id) REFERENCES Technical_Officer(TO_id)
+ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /*Admin Table*/
