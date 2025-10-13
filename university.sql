@@ -73,6 +73,7 @@ CREATE TABLE Attendance (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE
     );
 
 /*Attendance Handle Table*/
