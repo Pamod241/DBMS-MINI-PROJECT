@@ -58,6 +58,7 @@ CREATE TABLE Stu_Course (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /*Attendance Table*/
@@ -185,3 +186,5 @@ CREATE TABLE Assignment (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
 );
+
+
