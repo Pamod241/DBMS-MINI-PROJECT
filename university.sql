@@ -76,6 +76,8 @@ CREATE TABLE Attendance (
 
 /*Attendance Handle Table*/
 
+
+
 CREATE TABLE Attendance_Handle (
     Week INT,
     C_code VARCHAR(10),
