@@ -254,3 +254,25 @@ INSERT INTO Student (Reg_no, Fullname, DOB, Age, Email, Type, Dep_id) VALUES
 ('TG0013', 'Naduni Samarasekara', '2003-06-02', 22, 'naduni@stu.ruh.ac.lk', 'Proper', 'D03'),
 ('TG0014', 'Dinuka Rajapaksha', '2003-07-18', 22, 'dinuka@stu.ruh.ac.lk', 'Proper', 'D03'),
 ('TG0015', 'Hashini Rathnayake', '2002-10-22', 23, 'hashini@stu.ruh.ac.lk', 'Suspended', 'D01');
+
+
+/* enter data stu_course */
+
+INSERT INTO Stu_Course 
+(C_code, Reg_no) 
+VALUES
+('ENG1222', 'TG0001'),
+('ENG1222', 'TG0002'),
+('ICT1212', 'TG0001'),
+('ICT1212', 'TG0002'),
+('ICT1212', 'TG0003'),
+('ICT1222', 'TG0001'),
+('ICT1222', 'TG0002'),
+('ICT1222', 'TG0006'),
+('ICT1233', 'TG0003'),
+('ICT1233', 'TG0004'),
+('ICT1242', 'TG0005'),
+('ICT1253', 'TG0007'),
+('TCS1212', 'TG0008'),
+('TMS1233', 'TG0009'),
+('TMS1233', 'TG0010');
