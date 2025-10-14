@@ -201,7 +201,7 @@ CREATE TABLE Assignment (
 );
 
 
-/* Insert data to lecture table */
+/* Insert data to department table */
 
 INSERT INTO Department (Dep_id, D_name) VALUES
 ('D01', 'Information and Communication Technology'),
@@ -209,7 +209,7 @@ INSERT INTO Department (Dep_id, D_name) VALUES
 ('D03', 'Biosystems Technology');
 
 
-/* Insert data to dpartment table */
+/* Insert data to lecture table */
 
 INSERT INTO Lecturer (Lec_id, Fullname, Email, Gender, Dep_id) VALUES
 ('L001', 'Dr. P.H.P. Nuwan Laksiri', 'nuwan@tech.ruh.ac.lk', 'Male', 'D01'),
