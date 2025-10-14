@@ -316,3 +316,14 @@ VALUES
 ('TG0007', 'ICT1222', 10);
 
 
+/*enter data Project*/
+
+INSERT INTO Project 
+VALUES
+('TG0001', 'ICT1212', 15),
+('TG0002', 'ICT1212', 12),
+('TG0006', 'ICT1222', 14),
+('TG0007', 'ICT1222', 13);
+
+
+
