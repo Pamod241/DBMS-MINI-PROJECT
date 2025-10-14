@@ -376,3 +376,8 @@ INSERT INTO User VALUES
 ('U006', 'Technical_Officer', 'to123', 'kasun.to@tech.ruh.ac.lk'),
 ('U007', 'Student', 'stu123', 'kavindu@stu.ruh.ac.lk'),
 ('U008', 'Student', 'stu123', 'nimesha@stu.ruh.ac.lk');
+
+
+/*insert data for dean table*/
+
+INSERT INTO Dean VALUES ('DE01', 'Prof. H. Senanayake', 'dean@tech.ruh.ac.lk');
