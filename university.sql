@@ -347,5 +347,12 @@ VALUES
 ('TO05', 'Tharaka Perera', 'tharaka.to@tech.ruh.ac.lk');
 
 
+/*insert data for common marks table*/
+
+INSERT INTO Common VALUES
+('TG0001', 'ICT1212', 45, 50),
+('TG0002', 'ICT1212', 40, 48),
+('TG0006', 'ICT1222', 48, 47),
+('TG0007', 'ICT1222', 42, 44);
 
 
