@@ -22,6 +22,7 @@ CREATE TABLE Student (
     Type ENUM('Proper', 'Repeat', 'Suspended'),
     Dep_id VARCHAR(10),
     FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -34,6 +35,7 @@ CREATE TABLE Course (
     Type ENUM('Theory', 'Practical'),
     Lec_id VARCHAR(10),
     FOREIGN KEY (Lec_id) REFERENCES Lecturer(Lec_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -46,6 +48,7 @@ CREATE TABLE Lecturer (
     Gender ENUM('Male', 'Female', 'Other'),
     Dep_id VARCHAR(10),
     FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -58,6 +61,7 @@ CREATE TABLE Stu_Course (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /*Attendance Table*/
@@ -72,9 +76,12 @@ CREATE TABLE Attendance (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE
     );
 
 /*Attendance Handle Table*/
+
+
 
 CREATE TABLE Attendance_Handle (
     Week INT,
@@ -86,6 +93,7 @@ CREATE TABLE Attendance_Handle (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (TO_id) REFERENCES Technical_Officer(TO_id)
+ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 /*Admin Table*/
@@ -135,8 +143,10 @@ CREATE TABLE Common (
     Mid INT,
     End INT,
     PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no),
+    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
@@ -157,7 +167,9 @@ CREATE TABLE Quiz (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+    ON DELETE SET NULL ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+    ON DELETE SET NULL ON UPDATE CASCADE
 ); 
 
 
@@ -169,7 +181,9 @@ CREATE TABLE Project (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+     ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
@@ -181,27 +195,8 @@ CREATE TABLE Assignment (
     Mark INT,
     PRIMARY KEY (Reg_no, C_code),
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
+     ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
+ ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
-/* Insert data to department table */
-
-INSERT INTO Department (Dep_id, D_name) VALUES
-('D01', 'Information and Communication Technology'),
-('D02', 'Engineering Technology'),
-('D03', 'Biosystems Technology');
-
-
-
-/*  Insert data to lecture table */
-
-INSERT INTO Lecturer (Lec_id, Fullname, Email, Gender, Dep_id) VALUES
-('L001', 'Dr. P.H.P. Nuwan Laksiri', 'nuwan@tech.ruh.ac.lk', 'Male', 'D01'),
-('L002', 'Dr. S. Perera', 'sperera@tech.ruh.ac.lk', 'Male', 'D01'),
-('L003', 'Ms. I. Fernando', 'ifernando@tech.ruh.ac.lk', 'Female', 'D01'),
-('L004', 'Mr. K. Silva', 'ksilva@tech.ruh.ac.lk', 'Male', 'D02'),
-('L005', 'Dr. M. Jayasinghe', 'mjayasinghe@tech.ruh.ac.lk', 'Female', 'D03');
-
-
 
