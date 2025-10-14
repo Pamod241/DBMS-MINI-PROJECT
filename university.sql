@@ -336,5 +336,16 @@ VALUES
 ('TG0007', 'ICT1222', 17);
 
 
+/*enter data Technical_officer*/
+
+INSERT INTO Technical_Officer 
+VALUES
+('TO01', 'Kasun Wijesinghe', 'kasun.to@tech.ruh.ac.lk'),
+('TO02', 'Nadeesha Fernando', 'nadeesha.to@tech.ruh.ac.lk'),
+('TO03', 'Ruwan Jayalath', 'ruwan.to@tech.ruh.ac.lk'),
+('TO04', 'Dilini Samarasekara', 'dilini.to@tech.ruh.ac.lk'),
+('TO05', 'Tharaka Perera', 'tharaka.to@tech.ruh.ac.lk');
+
+
 
 
