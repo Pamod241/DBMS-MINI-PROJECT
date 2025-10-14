@@ -194,5 +194,14 @@ INSERT INTO Department (Dep_id, D_name) VALUES
 
 
 
+/*  Insert data to lecture table */
+
+INSERT INTO Lecturer (Lec_id, Fullname, Email, Gender, Dep_id) VALUES
+('L001', 'Dr. P.H.P. Nuwan Laksiri', 'nuwan@tech.ruh.ac.lk', 'Male', 'D01'),
+('L002', 'Dr. S. Perera', 'sperera@tech.ruh.ac.lk', 'Male', 'D01'),
+('L003', 'Ms. I. Fernando', 'ifernando@tech.ruh.ac.lk', 'Female', 'D01'),
+('L004', 'Mr. K. Silva', 'ksilva@tech.ruh.ac.lk', 'Male', 'D02'),
+('L005', 'Dr. M. Jayasinghe', 'mjayasinghe@tech.ruh.ac.lk', 'Female', 'D03');
+
 
 
