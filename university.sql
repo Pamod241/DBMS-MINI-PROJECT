@@ -306,3 +306,13 @@ VALUES
 ('A001', 'System Administrator', 'admin@tech.ruh.ac.lk');
 
 
+/*enter data Quiz*/
+
+INSERT INTO Quiz
+VALUES
+('TG0001', 'ICT1212', 10),
+('TG0002', 'ICT1212', 8),
+('TG0006', 'ICT1222', 9),
+('TG0007', 'ICT1222', 10);
+
+
