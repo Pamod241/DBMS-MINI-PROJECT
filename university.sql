@@ -183,3 +183,16 @@ CREATE TABLE Assignment (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
 );
+
+
+/* Insert data to department table */
+
+INSERT INTO Department (Dep_id, D_name) VALUES
+('D01', 'Information and Communication Technology'),
+('D02', 'Engineering Technology'),
+('D03', 'Biosystems Technology');
+
+
+
+
+
