@@ -326,4 +326,15 @@ VALUES
 ('TG0007', 'ICT1222', 13);
 
 
+/*enter data Assigment*/
+
+INSERT INTO Assignment 
+VALUES
+('TG0001', 'ICT1212', 20),
+('TG0002', 'ICT1212', 18),
+('TG0006', 'ICT1222', 19),
+('TG0007', 'ICT1222', 17);
+
+
+
 
