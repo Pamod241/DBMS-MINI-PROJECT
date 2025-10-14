@@ -299,4 +299,10 @@ INSERT INTO Attendance_Handle
 (1, 'ICT1222', 'TO02', '2025-01-15', 'Practical');
 
 
+/* enter data admin*/
+
+INSERT INTO Admin 
+VALUES 
+('A001', 'System Administrator', 'admin@tech.ruh.ac.lk');
+
 
