@@ -200,6 +200,17 @@ CREATE TABLE Assignment (
  ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+
+/* Insert data to department table */
+
+INSERT INTO Department (Dep_id, D_name) VALUES
+('D01', 'Information and Communication Technology'),
+('D02', 'Engineering Technology'),
+('D03', 'Biosystems Technology');
+
+
+
+
 /*  Insert data to cource table */
 
 INSERT INTO Course (C_code, C_name, Credit, Type, Lec_id) VALUES
