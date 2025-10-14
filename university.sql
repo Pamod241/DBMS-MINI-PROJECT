@@ -276,3 +276,19 @@ VALUES
 ('TCS1212', 'TG0008'),
 ('TMS1233', 'TG0009'),
 ('TMS1233', 'TG0010');
+
+/* enter data attendance */
+
+INSERT INTO Attendance
+ VALUES
+(1, 'Theory', 'Present', 'ICT1212', 'TG0001'),
+(1, 'Theory', 'Present', 'ICT1212', 'TG0002'),
+(1, 'Theory', 'Absent',  'ICT1212', 'TG0003'),
+(1, 'Practical', 'Present', 'ICT1222', 'TG0006'),
+(1, 'Practical', 'Medical', 'ICT1222', 'TG0007'),
+(2, 'Theory', 'Present', 'ICT1212', 'TG0001'),
+(2, 'Theory', 'Present', 'ICT1212', 'TG0002');
+
+
+
+
