@@ -356,3 +356,10 @@ INSERT INTO Common VALUES
 ('TG0007', 'ICT1222', 42, 44);
 
 
+/*insert data for marks table*/
+
+INSERT INTO Mark VALUES
+('ICT1212', 'Theory', 'TG0001', 'A'),
+('ICT1212', 'Theory', 'TG0002', 'B'),
+('ICT1222', 'Practical', 'TG0006', 'A'),
+('ICT1222', 'Practical', 'TG0007', 'B');
