@@ -197,5 +197,60 @@ CREATE TABLE Assignment (
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
      ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
-    ON DELETE CASCADE ON UPDATE CASCADE
+ ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+
+/* Insert data to department table */
+
+INSERT INTO Department (Dep_id, D_name) VALUES
+('D01', 'Information and Communication Technology'),
+('D02', 'Engineering Technology'),
+('D03', 'Biosystems Technology');
+
+
+/* Insert data to lecture table */
+
+INSERT INTO Lecturer (Lec_id, Fullname, Email, Gender, Dep_id) VALUES
+('L001', 'Dr. P.H.P. Nuwan Laksiri', 'nuwan@tech.ruh.ac.lk', 'Male', 'D01'),
+('L002', 'Dr. S. Perera', 'sperera@tech.ruh.ac.lk', 'Male', 'D01'),
+('L003', 'Ms. I. Fernando', 'ifernando@tech.ruh.ac.lk', 'Female', 'D01'),
+('L004', 'Mr. K. Silva', 'ksilva@tech.ruh.ac.lk', 'Male', 'D02'),
+('L005', 'Dr. M. Jayasinghe', 'mjayasinghe@tech.ruh.ac.lk', 'Female', 'D03');
+
+
+
+/*  Insert data to cource table */
+
+INSERT INTO Course (C_code, C_name, Credit, Type, Lec_id) VALUES
+('ENG1222', 'English', 2, 'Theory', 'L001'),
+('ICT1212', 'Database Management Systems', 3, 'Theory', 'L001'),
+('ICT1222', 'Database Management Systems Practicum', 2, 'Practical', 'L003'),
+('ICT1233', 'Server Side Web Development', 3, 'Practical', 'L002'),
+('ICT1242', 'Computer Architecture', 2, 'Theory', 'L004'),
+('ICT1253', 'Computer Networks', 3, 'Theory', 'L005'),
+('TCS1212', 'Fundamentals of Management', 2, 'Theory', 'L004'),
+('TMS1233', 'Discrete Mathematics', 3, 'Theory', 'L002');
+
+
+
+
+/*  Insert data to student table */
+
+
+INSERT INTO Student (Reg_no, Fullname, DOB, Age, Email, Type, Dep_id) VALUES
+('TG0001', 'Kavindu Perera', '2002-01-12', 23, 'kavindu@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0002', 'Nimesha Fernando', '2003-03-18', 22, 'nimesha@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0003', 'Sithum Bandara', '2002-07-02', 23, 'sithum@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0004', 'Sanduni Gamage', '2003-01-28', 22, 'sanduni@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0005', 'Amasha Dilrukshi', '2002-11-10', 23, 'amasha@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0006', 'Isuru Ranasinghe', '2002-05-21', 23, 'isuru@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0007', 'Hiruni Madushika', '2003-01-16', 22, 'hiruni@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0008', 'Pasindu Lakshan', '2002-06-11', 23, 'pasindu@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0009', 'Bimsara Jayasuriya', '2003-04-09', 22, 'bimsara@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0010', 'Mihiri De Silva', '2002-09-13', 23, 'mihiri@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0011', 'Sajith Abeywickrama', '2002-08-15', 23, 'sajith@stu.ruh.ac.lk', 'Proper', 'D02'),
+('TG0012', 'Chathura Weerasinghe', '2003-01-10', 22, 'chathura@stu.ruh.ac.lk', 'Proper', 'D02'),
+('TG0013', 'Naduni Samarasekara', '2003-06-02', 22, 'naduni@stu.ruh.ac.lk', 'Proper', 'D03'),
+('TG0014', 'Dinuka Rajapaksha', '2003-07-18', 22, 'dinuka@stu.ruh.ac.lk', 'Proper', 'D03'),
+('TG0015', 'Hashini Rathnayake', '2002-10-22', 23, 'hashini@stu.ruh.ac.lk', 'Suspended', 'D01');
