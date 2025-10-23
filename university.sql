@@ -99,6 +99,22 @@ CREATE TABLE User (
     Email VARCHAR(100)
 );
 
+/*medical table*/
+
+CREATE TABLE Medical(
+    medical_id CHAR(10) PRIMARY KEY,
+    description  VARCHAR(50),
+    s_date DATE,
+    e_date DATE,
+    student_id VARCHAR(6),
+	FOREIGN KEY (student_id) REFERENCES Student(Reg_no)
+	        ON DELETE CASCADE ON UPDATE CASCADE
+	
+    );
+
+
+
+
 /*Attendance Table*/
 
 CREATE TABLE Attendance (
