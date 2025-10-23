@@ -122,7 +122,29 @@ CREATE TABLE User (
 
 /*marks table*/
 
+CREATE TABLE Mark(
+    mark_id CHAR(10) PRIMARY KEY,
+    quiz_1 INT,
+    quiz_2 INT,
+    quiz_3 INT,
+    assesment INT,
+    mid INT,
+    end INT,
+    student_id VARCHAR(6),
+    course_code char(8),
+	CONSTRAINT chk_marks CHECK (
+  quiz_1  BETWEEN 0 AND 100 AND
+   quiz_2  BETWEEN 0 AND 100 AND
+    quiz_3  BETWEEN 0 AND 100 AND
+	assesment  BETWEEN 0 AND 100 AND
+	 mid  BETWEEN 0 AND 100 AND
+	 end  BETWEEN 0 AND 100 ),
+	FOREIGN KEY (course_code) REFERENCES Course(C_code)
+	        ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (student_id) REFERENCES Student(Reg_no)
+	        ON DELETE CASCADE ON UPDATE CASCADE
 
+);
 
 
 
@@ -244,34 +266,13 @@ VALUES
 ('A001', 'System Administrator', 'admin@tech.ruh.ac.lk');
 
 
-/*enter data Quiz*/
-
-INSERT INTO Quiz
-VALUES
-('TG0001', 'ICT1212', 10),
-('TG0002', 'ICT1212', 8),
-('TG0006', 'ICT1222', 9),
-('TG0007', 'ICT1222', 10);
 
 
-/*enter data Project*/
-
-INSERT INTO Project 
-VALUES
-('TG0001', 'ICT1212', 15),
-('TG0002', 'ICT1212', 12),
-('TG0006', 'ICT1222', 14),
-('TG0007', 'ICT1222', 13);
 
 
-/*enter data Assigment*/
 
-INSERT INTO Assignment 
-VALUES
-('TG0001', 'ICT1212', 20),
-('TG0002', 'ICT1212', 18),
-('TG0006', 'ICT1222', 19),
-('TG0007', 'ICT1222', 17);
+
+
 
 
 /*enter data Technical_officer*/
