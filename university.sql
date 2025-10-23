@@ -1,7 +1,7 @@
-create database university;
+create database FacultyDB;
 
 
-use university;
+use FacultyDB;
 
 /*Department Table*/
 
@@ -122,32 +122,10 @@ CREATE TABLE User (
 
 /*marks table*/
 
-CREATE TABLE Mark (
-    C_code VARCHAR(10),
-    Type ENUM('Theory', 'Practical'),
-    Reg_no VARCHAR(15),
-    Grade VARCHAR(5),
-    PRIMARY KEY (C_code, Type, Reg_no),
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-        ON DELETE CASCADE ON UPDATE CASCADE
-);
 
 
-/*create common table*/
 
-CREATE TABLE Common (
-    Reg_no VARCHAR(15),
-    C_code VARCHAR(10),
-    Mid INT,
-    End INT,
-    PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-    ON DELETE SET NULL ON UPDATE CASCADE,
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-    ON DELETE SET NULL ON UPDATE CASCADE
-);
+
 
 
 /*Technical Officer Table*/
@@ -159,46 +137,6 @@ CREATE TABLE Technical_Officer (
 );
 
 
-/*Quiz Table*/
-
-CREATE TABLE Quiz (
-    Reg_no VARCHAR(15),
-    C_code VARCHAR(10),
-    Mark INT,
-    PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-    ON DELETE SET NULL ON UPDATE CASCADE,
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-    ON DELETE SET NULL ON UPDATE CASCADE
-); 
-
-
-/*Project Table*/
-
-CREATE TABLE Project (
-    Reg_no VARCHAR(15),
-    C_code VARCHAR(10),
-    Mark INT,
-    PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-     ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-     ON DELETE CASCADE ON UPDATE CASCADE
-);
-
-
-/*Assignment Table*/
-
-CREATE TABLE Assignment (
-    Reg_no VARCHAR(15),
-    C_code VARCHAR(10),
-    Mark INT,
-    PRIMARY KEY (Reg_no, C_code),
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-     ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
- ON DELETE CASCADE ON UPDATE CASCADE
-);
 
 
 /* Insert data to department table */
