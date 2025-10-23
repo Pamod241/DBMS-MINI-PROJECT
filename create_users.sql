@@ -18,3 +18,31 @@ CREATE USER 'Technical_Officer'@'localhost' IDENTIFIED BY 'techofficerpwd';
 
  DROP USER  IF EXISTS 'Student'@'localhost';
 CREATE USER 'Student'@'localhost' IDENTIFIED BY 'studentpwd';
+
+
+
+-- PRIVILAGES AND GRANT OPTION --
+
+GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+GRANT ALL PRIVILEGES ON *.* TO 'Dean'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT ALL PRIVILEGES ON *.* TO 'Lecturer'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT SELECT,INSERT,UPDATE ON FacultyDB.attendence TO 'Technical_Officer'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT SELECT,INSERT,UPDATE ON FacultyDB.medical TO 'Technical_Officer'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT SELECT ON FacultyDB.attendence TO 'Student'@'localhost';
+FLUSH PRIVILEGES;
+
+GRANT SELECT ON FacultyDB.mark TO 'Student'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
