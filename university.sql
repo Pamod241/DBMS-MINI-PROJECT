@@ -2070,12 +2070,6 @@ INSERT INTO Attendence VALUES
 
 
 
-/* enter data attendance _ handale*/
-
-INSERT INTO Attendance_Handle
- VALUES
-(1, 'ICT1212', 'TO01', '2025-01-15', 'Theory'),
-(1, 'ICT1222', 'TO02', '2025-01-15', 'Practical');
 
 
 /* enter data admin*/
