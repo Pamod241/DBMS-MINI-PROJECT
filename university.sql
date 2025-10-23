@@ -167,8 +167,6 @@ CREATE TABLE Mark(
 
 
 
-<<<<<<< HEAD
-=======
 /* Insert data to department table */
 
 INSERT INTO Department (Dep_id, D_name) VALUES
@@ -464,4 +462,3 @@ INSERT INTO User VALUES
 /*insert data for dean table*/
 
 INSERT INTO Dean VALUES ('DE01', 'Prof. H. Senanayake', 'dean@tech.ruh.ac.lk');
->>>>>>> 367ed320132eb3386f5fdbdf99c96624b7266648
