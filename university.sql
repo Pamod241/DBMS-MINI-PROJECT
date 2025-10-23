@@ -117,18 +117,23 @@ CREATE TABLE Medical(
 
 /*Attendance Table*/
 
-CREATE TABLE Attendance (
-    Week INT,
-    Type ENUM('Theory', 'Practical'),
-    Status ENUM('Present', 'Absent', 'Medical'),
-    C_code VARCHAR(10),
-    Reg_no VARCHAR(15),
-    PRIMARY KEY (Week, C_code, Reg_no),
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-     ON DELETE CASCADE ON UPDATE CASCADE
-    );
+CREATE TABLE Attendence(
+    att_id VARCHAR(5) PRIMARY KEY,
+    date DATE,
+    att_state VARCHAR(20),
+    session_type VARCHAR(25),
+    hour INT,
+    student_id VARCHAR(6),
+    medical_id CHAR(10),
+    course_code CHAR(8),
+	FOREIGN KEY (student_id) REFERENCES Student(Reg_no)
+	        ON DELETE CASCADE ON UPDATE CASCADE,
+   FOREIGN KEY (course_code) REFERENCES Course(C_code)
+	        ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (medical_id) REFERENCES Medical(medical_id)
+	        ON DELETE CASCADE ON UPDATE CASCADE		
+);
+
 
 /*Attendance Handle Table*/
 
@@ -276,15 +281,7 @@ INSERT Medical VALUES
 
 /* enter data attendance */
 
-INSERT INTO Attendance
- VALUES
-(1, 'Theory', 'Present', 'ICT1212', 'TG0001'),
-(1, 'Theory', 'Present', 'ICT1212', 'TG0002'),
-(1, 'Theory', 'Absent',  'ICT1212', 'TG0003'),
-(1, 'Practical', 'Present', 'ICT1222', 'TG0006'),
-(1, 'Practical', 'Medical', 'ICT1222', 'TG0007'),
-(2, 'Theory', 'Present', 'ICT1212', 'TG0001'),
-(2, 'Theory', 'Present', 'ICT1212', 'TG0002');
+
 
 
 
