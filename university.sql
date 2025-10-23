@@ -179,7 +179,9 @@ CREATE TABLE Mark(
 INSERT INTO Department (Dep_id, D_name) VALUES
 ('D01', 'Information and Communication Technology'),
 ('D02', 'Engineering Technology'),
-('D03', 'Biosystems Technology');
+('D03', 'Biosystems Technology'),
+('D04', 'Multidisciplinary Studies');
+
 
 
 /* Insert data to lecture table */
