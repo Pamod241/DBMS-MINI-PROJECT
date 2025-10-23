@@ -2380,15 +2380,13 @@ VALUES
 
 /*insert data for user table*/
 
-INSERT INTO User VALUES
-('U001', 'Admin', 'admin123', 'admin@tech.ruh.ac.lk'),
-('U002', 'Dean', 'dean123', 'dean@tech.ruh.ac.lk'),
-('U003', 'Lecturer', 'lect123', 'nuwan@tech.ruh.ac.lk'),
-('U004', 'Lecturer', 'lect123', 'sperera@tech.ruh.ac.lk'),
-('U005', 'Lecturer', 'lect123', 'ifernando@tech.ruh.ac.lk'),
-('U006', 'Technical_Officer', 'to123', 'kasun.to@tech.ruh.ac.lk'),
-('U007', 'Student', 'stu123', 'kavindu@stu.ruh.ac.lk'),
-('U008', 'Student', 'stu123', 'nimesha@stu.ruh.ac.lk');
+INSERT INTO User 
+VALUES
+('U001','Admin','adminpwd','Admin@gmail.com'),
+('U002','Dean','deanpwdd','dean@gmail.com'),
+('U003','Lecturer','lecturepwd','lecturer@gmail.com'),
+('U004','Technical_Officer','techofficerpwd','techofficer@gmail.com'),
+('U005','Student','studentpwd','student@gmail.com');
 
 
 /*insert data for dean table*/
