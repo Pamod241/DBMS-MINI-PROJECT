@@ -10,6 +10,33 @@ CREATE TABLE Department (
     D_name VARCHAR(100) NOT NULL
 );
 
+/*Lecturer Table*/
+
+CREATE TABLE Lecturer (
+    Lec_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) UNIQUE,
+    Gender ENUM('Male', 'Female', 'Other'),
+    Dep_id VARCHAR(10),
+    FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+
+
+
+
+/*Course Table*/
+
+CREATE TABLE Course (
+    C_code VARCHAR(10) PRIMARY KEY,
+    C_name VARCHAR(100) NOT NULL,
+    Credit INT,
+    Type ENUM('Theory', 'Practical'),
+    Lec_id VARCHAR(10),
+    FOREIGN KEY (Lec_id) REFERENCES Lecturer(Lec_id)
+    ON DELETE SET NULL ON UPDATE CASCADE
+);
 
 /*Student Table*/
 
@@ -26,32 +53,6 @@ CREATE TABLE Student (
 );
 
 
-/*Course Table*/
-
-CREATE TABLE Course (
-    C_code VARCHAR(10) PRIMARY KEY,
-    C_name VARCHAR(100) NOT NULL,
-    Credit INT,
-    Type ENUM('Theory', 'Practical'),
-    Lec_id VARCHAR(10),
-    FOREIGN KEY (Lec_id) REFERENCES Lecturer(Lec_id)
-    ON DELETE SET NULL ON UPDATE CASCADE
-);
-
-
-/*Lecturer Table*/
-
-CREATE TABLE Lecturer (
-    Lec_id VARCHAR(10) PRIMARY KEY,
-    Fullname VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE,
-    Gender ENUM('Male', 'Female', 'Other'),
-    Dep_id VARCHAR(10),
-    FOREIGN KEY (Dep_id) REFERENCES Department(Dep_id)
-    ON DELETE SET NULL ON UPDATE CASCADE
-);
-
-
 /*Student-Course Relationship*/
 
 CREATE TABLE Stu_Course (
@@ -62,6 +63,40 @@ CREATE TABLE Stu_Course (
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
     ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+/*Admin Table*/
+
+CREATE TABLE Admin (
+    Admin_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+
+/*Dean table*/
+CREATE TABLE Dean (
+    D_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+
+/*Technical Officer Table*/
+
+CREATE TABLE Technical_Officer (
+    TO_id VARCHAR(10) PRIMARY KEY,
+    Fullname VARCHAR(100),
+    Email VARCHAR(100)
+);
+
+/*User table*/
+CREATE TABLE User (
+    User_id VARCHAR(10) PRIMARY KEY,
+    Role ENUM('Admin', 'Dean', 'Lecturer', 'Technical_Officer', 'Student'),
+    Password VARCHAR(100) NOT NULL,
+    Email VARCHAR(100)
 );
 
 /*Attendance Table*/
@@ -96,29 +131,6 @@ CREATE TABLE Attendance_Handle (
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-/*Admin Table*/
-
-CREATE TABLE Admin (
-    Admin_id VARCHAR(10) PRIMARY KEY,
-    Fullname VARCHAR(100),
-    Email VARCHAR(100)
-);
-
-
-/*Dean table*/
-CREATE TABLE Dean (
-    D_id VARCHAR(10) PRIMARY KEY,
-    Fullname VARCHAR(100),
-    Email VARCHAR(100)
-);
-
-/*User table*/
-CREATE TABLE User (
-    User_id VARCHAR(10) PRIMARY KEY,
-    Role ENUM('Admin', 'Dean', 'Lecturer', 'Technical_Officer', 'Student'),
-    Password VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE
-);
 
 /*marks table*/
 
@@ -150,13 +162,7 @@ CREATE TABLE Mark(
 
 
 
-/*Technical Officer Table*/
 
-CREATE TABLE Technical_Officer (
-    TO_id VARCHAR(10) PRIMARY KEY,
-    Fullname VARCHAR(100),
-    Email VARCHAR(100)
-);
 
 
 
@@ -205,15 +211,15 @@ INSERT INTO Student (Reg_no, Fullname, DOB, Age, Email, Type, Dep_id) VALUES
 ('TG0004', 'Sanduni Gamage', '2003-01-28', 22, 'sanduni@stu.ruh.ac.lk', 'Proper', 'D01'),
 ('TG0005', 'Amasha Dilrukshi', '2002-11-10', 23, 'amasha@stu.ruh.ac.lk', 'Proper', 'D01'),
 ('TG0006', 'Isuru Ranasinghe', '2002-05-21', 23, 'isuru@stu.ruh.ac.lk', 'Repeat', 'D01'),
-('TG0007', 'Hiruni Madushika', '2003-01-16', 22, 'hiruni@stu.ruh.ac.lk', 'Repeat', 'D01'),
+('TG0007', 'Hiruni Madushika', '2003-02-16', 22, 'hiruni@stu.ruh.ac.lk', 'Repeat', 'D01'),
 ('TG0008', 'Pasindu Lakshan', '2002-06-11', 23, 'pasindu@stu.ruh.ac.lk', 'Repeat', 'D01'),
 ('TG0009', 'Bimsara Jayasuriya', '2003-04-09', 22, 'bimsara@stu.ruh.ac.lk', 'Repeat', 'D01'),
 ('TG0010', 'Mihiri De Silva', '2002-09-13', 23, 'mihiri@stu.ruh.ac.lk', 'Repeat', 'D01'),
-('TG0011', 'Sajith Abeywickrama', '2002-08-15', 23, 'sajith@stu.ruh.ac.lk', 'Proper', 'D02'),
-('TG0012', 'Chathura Weerasinghe', '2003-01-10', 22, 'chathura@stu.ruh.ac.lk', 'Proper', 'D02'),
-('TG0013', 'Naduni Samarasekara', '2003-06-02', 22, 'naduni@stu.ruh.ac.lk', 'Proper', 'D03'),
-('TG0014', 'Dinuka Rajapaksha', '2003-07-18', 22, 'dinuka@stu.ruh.ac.lk', 'Proper', 'D03'),
-('TG0015', 'Hashini Rathnayake', '2002-10-22', 23, 'hashini@stu.ruh.ac.lk', 'Suspended', 'D01');
+('TG0011', 'Sajith Abeywickrama', '2002-08-15', 23, 'sajith@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0012', 'Chathura Weerasinghe', '2003-01-10', 22, 'chathura@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0013', 'Naduni Samarasekara', '2003-06-02', 22, 'naduni@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0014', 'Dinuka Rajapaksha', '2003-07-18', 22, 'dinuka@stu.ruh.ac.lk', 'Proper', 'D01'),
+('TG0015', 'Hashini Rathnayake', '2002-10-22', 23, 'hashini@stu.ruh.ac.lk', 'Proper', 'D01');
 
 
 /* enter data stu_course */
