@@ -62,8 +62,9 @@ CREATE TABLE Stu_Course (
     FOREIGN KEY (C_code) REFERENCES Course(C_code)
         ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (Reg_no) REFERENCES Student(Reg_no)
-    ON DELETE CASCADE ON UPDATE CASCADE
+        ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 
 
 /*Admin Table*/
@@ -135,22 +136,7 @@ CREATE TABLE Attendence(
 );
 
 
-/*Attendance Handle Table*/
 
-
-
-CREATE TABLE Attendance_Handle (
-    Week INT,
-    C_code VARCHAR(10),
-    TO_id VARCHAR(10),
-    Date DATE,
-    Type ENUM('Theory', 'Practical'),
-    PRIMARY KEY (Week, C_code, TO_id),
-    FOREIGN KEY (C_code) REFERENCES Course(C_code)
-        ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (TO_id) REFERENCES Technical_Officer(TO_id)
-ON DELETE CASCADE ON UPDATE CASCADE
-);
 
 
 /*marks table*/
