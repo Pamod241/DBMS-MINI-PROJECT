@@ -183,14 +183,14 @@ INSERT INTO Lecturer (Lec_id, Fullname, Email, Gender, Dep_id) VALUES
 /*  Insert data to cource table */
 
 INSERT INTO Course (C_code, C_name, Credit, Type, Lec_id) VALUES
-('ENG1222', 'English', 2, 'Theory', 'L001'),
-('ICT1212', 'Database Management Systems', 3, 'Theory', 'L001'),
-('ICT1222', 'Database Management Systems Practicum', 2, 'Practical', 'L003'),
-('ICT1233', 'Server Side Web Development', 3, 'Practical', 'L002'),
-('ICT1242', 'Computer Architecture', 2, 'Theory', 'L004'),
+('ENG1222', 'English', 2, 'Theory', 'L007'),
+('ICT1212', 'Database Management Systems', 2, 'Theory', 'L001'),
+('ICT1222', 'Database Management Systems Practicum', 2, 'Practical', 'L001'),
+('ICT1233', 'Server Side Web Development', 3, 'Theory', 'L002'),
+('ICT1242', 'Computer Architecture', 2, 'Theory', 'L006'),
 ('ICT1253', 'Computer Networks', 3, 'Theory', 'L005'),
 ('TCS1212', 'Fundamentals of Management', 2, 'Theory', 'L004'),
-('TMS1233', 'Discrete Mathematics', 3, 'Theory', 'L002');
+('TMS1233','Discrete Mathematics', 3, 'Theory', 'L002');
 
 
 
