@@ -1,4 +1,5 @@
 -- Create User Account --
+
  DROP USER  IF EXISTS 'Admin'@'localhost';
 CREATE USER 'Admin'@'localhost' IDENTIFIED BY 'adminpwd';
 
