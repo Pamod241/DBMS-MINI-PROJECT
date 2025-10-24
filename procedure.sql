@@ -17,7 +17,25 @@ DELIMITER ;
 
 CALL marks_details();
 
+-- 2 MARKS DETAILS FOR EACH STUDENT (GIVEN STUDENT ID)
 
+
+DROP PROCEDURE IF EXISTS marks_details_by_student_id;
+DELIMITER //
+
+CREATE PROCEDURE marks_details_by_student_id( IN stu_num VARCHAR(10))
+BEGIN
+
+SELECT mark_id,student_id,course_code, CA_Eligibility,END_Eligibility 
+
+FROM RESULT
+WHERE student_id=stu_num;
+END //
+
+DELIMITER ;
+
+
+CALL marks_details_by_student_id('TG0001');
 
 
 
