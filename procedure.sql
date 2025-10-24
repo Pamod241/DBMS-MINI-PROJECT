@@ -47,3 +47,28 @@ DELIMITER ;
 
 CALL cur_gpa_details();
 
+
+
+-- CURRENT GPA DETAILS FOR GIVEN STUDENT ID
+
+
+DROP PROCEDURE IF EXISTS cur_gpa_details;
+
+DELIMITER //
+
+
+CREATE PROCEDURE cur_gpa_details (IN stu_num VARCHAR(10))
+
+BEGIN
+ SELECT student_id,CGPA
+ FROM CGPA_check
+ WHERE student_id=stu_num;
+ 
+ 
+END //
+
+DELIMITER ;
+
+
+CALL cur_gpa_details('TG0004');
+
