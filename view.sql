@@ -109,8 +109,6 @@ CREATE VIEW Grade_Point_Credit  AS
 SELECT  student_id,Credit,Course_code,(Grade_Point * Credit) AS pointCreditvalue FROM 
 Student_grade ;
 
-
-
 -- Cal SEM GPA
 
 drop view if exists SGPA_check;
@@ -121,6 +119,8 @@ INNER JOIN Course c  ON g.course_code = c.C_code
 GROUP BY g.student_id
 
 order by student_id;
+
+
 
 
 -- Attendence Eligibility or NOT
