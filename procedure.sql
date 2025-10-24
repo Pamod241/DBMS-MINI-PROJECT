@@ -158,3 +158,16 @@ DELIMITER ;
 
 CALL cur_gpa_details('TG0004');
 
+
+-- attendence  DETAILS WHOLE BATCH
+DROP PROCEDURE IF EXISTS attendence_details;
+DELIMITER //
+CREATE PROCEDURE attendence_details ()
+BEGIN
+ SELECT student_id,course_code,Attendance_Percentage,Eligibility
+ FROM Attendence_Eligibility_OR_NOT;
+END //
+DELIMITER ;
+
+
+CALL attendence_details();
