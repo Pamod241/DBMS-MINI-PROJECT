@@ -29,3 +29,34 @@ CASE
   FROM Mark 
   INNER JOIN Student ON Mark.student_id = Student.Reg_no 
 ORDER BY  Student.Reg_no  ASC ;
+
+
+
+
+-- 2 final marks ---
+
+DROP VIEW IF EXISTS Final_Marks;
+
+CREATE VIEW Final_Marks AS
+SELECT 
+    m.student_id AS student_id,
+    m.course_code AS course_code,
+    CASE
+        WHEN c.CA_Eligibility = 'EL' THEN
+            CASE
+                WHEN c.END_Eligibility = 'ESA PASS' THEN 
+                    c.end_new + c.Final_CA
+                ELSE 'ESA Fail'
+            END
+        ELSE 'CA Fail'
+    END AS Final_Marks
+FROM 
+    mark m
+INNER JOIN 
+    Result c 
+    ON m.mark_id = c.mark_id 
+    
+ORDER BY 
+    m.student_id ASC;
+
+SELECT * FROM Final_Marks ;
