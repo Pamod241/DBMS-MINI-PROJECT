@@ -171,3 +171,19 @@ DELIMITER ;
 
 
 CALL attendence_details();
+
+
+
+-- attendence  DETAILS FOR GIVEN STUDENT ID
+DROP PROCEDURE IF EXISTS attendence_details;
+DELIMITER //
+CREATE PROCEDURE attendence_details (IN stu_num VARCHAR(10))
+BEGIN
+ SELECT student_id,course_code,Attendance_Percentage,Eligibility
+ FROM Attendence_Eligibility_OR_NOT
+ WHERE student_id=stu_num;
+END //
+DELIMITER ;
+
+
+CALL attendence_details('TG0004');
