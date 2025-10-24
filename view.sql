@@ -60,3 +60,42 @@ ORDER BY
     m.student_id ASC;
 
 SELECT * FROM Final_Marks ;
+
+
+-- find grade --
+
+
+DROP VIEW IF EXISTS Student_grade;
+CREATE VIEW Student_grade AS SELECT f. student_id,f.course_code,c.Credit,f.Final_Marks,
+
+ CASE
+        WHEN f.Final_Marks >= 85 AND f.Final_Marks <= 100 THEN 'A+'
+        WHEN f.Final_Marks >= 75 AND f.Final_Marks < 85 THEN 'A'
+        WHEN f.Final_Marks >= 70 AND f.Final_Marks < 75 THEN 'A-'
+        WHEN f.Final_Marks >= 65 AND f.Final_Marks < 70 THEN 'B+'
+        WHEN f.Final_Marks >= 60 AND f.Final_Marks < 65 THEN 'B'
+        WHEN f.Final_Marks >= 55 AND f.Final_Marks < 60 THEN 'B-'
+        WHEN f.Final_Marks >= 50 AND f.Final_Marks < 55 THEN 'C+'
+        WHEN f.Final_Marks >= 45 AND f.Final_Marks < 50 THEN 'C'
+        WHEN f.Final_Marks >= 40 AND f.Final_Marks < 45 THEN 'C-'
+        WHEN f.Final_Marks >= 35 AND f.Final_Marks < 40 THEN 'D'
+        WHEN f.Final_Marks >= 0 AND f.Final_Marks < 35 THEN 'E'
+    END AS Grade,
+
+    CASE
+        WHEN f.Final_Marks >= 85 AND f.Final_Marks <= 100 THEN 4.0
+        WHEN f.Final_Marks >= 75 AND f.Final_Marks < 85 THEN 4.0
+        WHEN f.Final_Marks >= 70 AND f.Final_Marks < 75 THEN 3.7
+        WHEN f.Final_Marks >= 65 AND f.Final_Marks < 70 THEN 3.3
+        WHEN f.Final_Marks >= 60 AND f.Final_Marks < 65 THEN 3.0
+        WHEN f.Final_Marks >= 55 AND f.Final_Marks < 60 THEN 2.7
+        WHEN f.Final_Marks >= 50 AND f.Final_Marks < 55 THEN 2.3
+        WHEN f.Final_Marks >= 45 AND f.Final_Marks < 50 THEN 2.0
+        WHEN f.Final_Marks >= 40 AND f.Final_Marks < 45 THEN 1.7
+        WHEN f.Final_Marks >= 35 AND f.Final_Marks < 40 THEN 1.3
+        WHEN f.Final_Marks >= 0 AND f.Final_Marks < 35 THEN 0.0
+    END AS Grade_Point
+	
+	from Final_Marks f 
+	
+	INNER JOIN Course c ON c.C_code = f.course_code ;
