@@ -121,6 +121,17 @@ GROUP BY g.student_id
 order by student_id;
 
 
+-- CAL CURRENT GPA
+
+drop view if exists CGPA_check;
+CREATE VIEW  CGPA_check AS
+SELECT g.student_id,(SUM(g.pointCreditvalue))/ SUM(g.Credit) AS CGPA
+FROM Grade_Point_Credit g
+INNER JOIN Course c ON g.course_code = c.C_code 
+ GROUP BY g.student_id
+ order by student_id;
+
+
 
 
 -- Attendence Eligibility or NOT
