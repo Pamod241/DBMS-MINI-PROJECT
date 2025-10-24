@@ -110,6 +110,19 @@ SELECT  student_id,Credit,Course_code,(Grade_Point * Credit) AS pointCreditvalue
 Student_grade ;
 
 
+
+-- Cal SEM GPA
+
+drop view if exists SGPA_check;
+CREATE VIEW SGPA_check AS
+SELECT g.student_id,(SUM(g.pointCreditvalue))/ SUM(g.Credit) AS SGPA
+FROM Grade_Point_Credit g
+INNER JOIN Course c  ON g.course_code = c.C_code 
+GROUP BY g.student_id
+
+order by student_id;
+
+
 -- Attendence Eligibility or NOT
 
 drop view if exists Attendence_Eligibility_OR_NOT;
