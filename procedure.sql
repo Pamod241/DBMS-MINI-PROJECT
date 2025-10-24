@@ -1,0 +1,14 @@
+-- SEMESTER GPA DETAILS WHOLE BATCH 
+
+
+DROP PROCEDURE IF EXISTS sem_gpa_details;
+DELIMITER //
+CREATE PROCEDURE sem_gpa_details ()
+BEGIN
+ SELECT student_id,SGPA
+ FROM SGPA_check;
+END //
+DELIMITER ;
+
+
+CALL sem_gpa_details();
