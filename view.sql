@@ -99,3 +99,15 @@ CREATE VIEW Student_grade AS SELECT f. student_id,f.course_code,c.Credit,f.Final
 	from Final_Marks f 
 	
 	INNER JOIN Course c ON c.C_code = f.course_code ;
+
+
+-- Grade Credit of students
+
+drop view if exists Grade_Point_Credit;
+CREATE VIEW Grade_Point_Credit  AS 
+
+SELECT  student_id,Credit,Course_code,(Grade_Point * Credit) AS pointCreditvalue FROM 
+Student_grade ;
+
+
+
