@@ -1,3 +1,30 @@
+-- 1 marks details whole batch
+
+DROP PROCEDURE IF EXISTS marks_details;
+DELIMITER //
+
+CREATE PROCEDURE marks_details()
+BEGIN
+
+SELECT mark_id,student_id,course_code, CA_Eligibility,END_Eligibility 
+
+FROM RESULT;
+
+END //
+
+DELIMITER ;
+
+
+CALL marks_details();
+
+
+
+
+
+
+
+
+
 -- SEMESTER GPA DETAILS WHOLE BATCH 
 
 
