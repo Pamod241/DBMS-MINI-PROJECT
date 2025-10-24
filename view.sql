@@ -110,4 +110,21 @@ SELECT  student_id,Credit,Course_code,(Grade_Point * Credit) AS pointCreditvalue
 Student_grade ;
 
 
+-- Attendence Eligibility or NOT
+
+drop view if exists Attendence_Eligibility_OR_NOT;
+CREATE VIEW Attendence_Eligibility_OR_NOT AS
+    SELECT
+     student_id,
+     course_code,
+        ROUND(COUNT(CASE WHEN att_state = 'Present' OR medical_id IS NOT NULL THEN 1 END) * 100.0 / 15,2) AS Attendance_Percentage,
+        IF(COUNT(CASE WHEN att_state = 'Present' OR medical_id IS NOT NULL THEN 1 END) * 100.0 / 15 >= 80, 'Eligible', 'Not Eligible') AS Eligibility
+    FROM
+        Attendence
+    GROUP BY
+        student_id, course_code
+	 ORDER BY student_id ASC;
+
+
+
 
