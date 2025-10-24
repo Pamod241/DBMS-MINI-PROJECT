@@ -29,3 +29,21 @@ DELIMITER ;
 
 
 CALL sem_gpa_details('TG0004');
+
+
+
+-- CURRENT GPA DETAILS WHOLE BATCH
+
+
+DROP PROCEDURE IF EXISTS cur_gpa_details;
+DELIMITER //
+CREATE PROCEDURE cur_gpa_details ()
+BEGIN
+ SELECT student_id,CGPA
+ FROM CGPA_check;
+END //
+DELIMITER ;
+
+
+CALL cur_gpa_details();
+
