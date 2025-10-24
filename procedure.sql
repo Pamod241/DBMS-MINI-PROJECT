@@ -39,6 +39,26 @@ CALL marks_details_by_student_id('TG0001');
 
 
 
+--  STUDENT GRADE FOR WHOLE BATCH
+
+
+DROP PROCEDURE IF EXISTS marks_grade_details;
+DELIMITER //
+
+CREATE PROCEDURE marks_grade_details()
+BEGIN
+
+SELECT student_id,course_code, Final_Marks,Grade,Grade_Point
+
+FROM Student_grade;
+
+END //
+
+DELIMITER ;
+
+
+CALL marks_grade_details();
+
 
 
 
