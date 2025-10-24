@@ -61,6 +61,27 @@ CALL marks_grade_details();
 
 
 
+--  STUDENT GRADE FOR GIVEN STUDENT ID
+
+
+DROP PROCEDURE IF EXISTS marks_grade_details;
+DELIMITER //
+
+CREATE PROCEDURE marks_grade_details(IN stu_num VARCHAR(10))
+BEGIN
+
+SELECT student_id,course_code, Final_Marks,Grade,Grade_Point
+
+FROM Student_grade
+WHERE student_id=stu_num;
+
+END //
+
+DELIMITER ;
+
+
+CALL marks_grade_details('TG0015');
+
 
 
 -- SEMESTER GPA DETAILS WHOLE BATCH 
