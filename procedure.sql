@@ -45,7 +45,7 @@ CALL marks_details_by_student_id('TG0001');
 DROP PROCEDURE IF EXISTS marks_grade_details;
 DELIMITER //
 
-CREATE PROCEDURE marks_grade_details()
+CREATE PROCEDURE marks_grade_details_()
 BEGIN
 
 SELECT student_id,course_code, Final_Marks,Grade,Grade_Point
@@ -64,10 +64,11 @@ CALL marks_grade_details();
 --  STUDENT GRADE FOR GIVEN STUDENT ID
 
 
-DROP PROCEDURE IF EXISTS marks_grade_details;
+DROP PROCEDURE IF EXISTS marks_grade_details_by_student_id;
 DELIMITER //
 
-CREATE PROCEDURE marks_grade_details(IN stu_num VARCHAR(10))
+
+CREATE PROCEDURE marks_grade_details_by_student_id(IN stu_num VARCHAR(10))
 BEGIN
 
 SELECT student_id,course_code, Final_Marks,Grade,Grade_Point
@@ -80,7 +81,7 @@ END //
 DELIMITER ;
 
 
-CALL marks_grade_details('TG0015');
+CALL  marks_grade_details_by_student_id ('TG0015');
 
 
 
@@ -103,9 +104,9 @@ CALL sem_gpa_details();
 -- SEMESTER GPA DETAILS FOR GIVEN STUDENT ID
 
 
-DROP PROCEDURE IF EXISTS sem_gpa_details;
+DROP PROCEDURE IF EXISTS sem_gpa_details_details_by_student_id;
 DELIMITER //
-CREATE PROCEDURE sem_gpa_details (IN stu_num VARCHAR(10))
+CREATE PROCEDURE sem_gpa_details_details_by_student_id (IN stu_num VARCHAR(10))
 BEGIN
  SELECT student_id,SGPA
  FROM SGPA_check
@@ -114,7 +115,7 @@ END //
 DELIMITER ;
 
 
-CALL sem_gpa_details('TG0004');
+CALL sem_gpa_details_details_by_student_id('TG0004');
 
 
 
@@ -138,12 +139,12 @@ CALL cur_gpa_details();
 -- CURRENT GPA DETAILS FOR GIVEN STUDENT ID
 
 
-DROP PROCEDURE IF EXISTS cur_gpa_details;
+DROP PROCEDURE IF EXISTS cur_gpa_details_by_student_id;
 
 DELIMITER //
 
 
-CREATE PROCEDURE cur_gpa_details (IN stu_num VARCHAR(10))
+CREATE PROCEDURE cur_gpa_details_by_student_id (IN stu_num VARCHAR(10))
 
 BEGIN
  SELECT student_id,CGPA
@@ -156,7 +157,7 @@ END //
 DELIMITER ;
 
 
-CALL cur_gpa_details('TG0004');
+CALL cur_gpa_details_by_student_id('TG0004');
 
 
 -- attendence  DETAILS WHOLE BATCH
@@ -175,9 +176,9 @@ CALL attendence_details();
 
 
 -- attendence  DETAILS FOR GIVEN STUDENT ID
-DROP PROCEDURE IF EXISTS attendence_details;
+DROP PROCEDURE IF EXISTS attendence_details__by_student_id;
 DELIMITER //
-CREATE PROCEDURE attendence_details (IN stu_num VARCHAR(10))
+CREATE PROCEDURE attendence_details_by_student_id (IN stu_num VARCHAR(10))
 BEGIN
  SELECT student_id,course_code,Attendance_Percentage,Eligibility
  FROM Attendence_Eligibility_OR_NOT
@@ -186,7 +187,7 @@ END //
 DELIMITER ;
 
 
-CALL attendence_details('TG0004');
+CALL attendence_details_by_student_id('TG0004');
 
 
 --  Eligibility_with_attendence_and_CA for WHOLE BATCH
@@ -207,7 +208,7 @@ CALL Eligibility_with_attendence_and_CA_details();
 
 --  Eligibility_with_attendence_and_CA for GIVEN STUDENT ID
 
-DROP PROCEDURE IF EXISTS Eligibility_with_attendence_and_CA_details;
+DROP PROCEDURE IF EXISTS Eligibility_with_attendence_and_CA_details_by_student_id;
 DELIMITER //
 CREATE PROCEDURE Eligibility_with_attendence_and_CA_details (IN stu_num VARCHAR(10))
 BEGIN
@@ -218,4 +219,4 @@ END //
 DELIMITER ;
 
 
-CALL Eligibility_with_attendence_and_CA_details('TG0004');
+CALL Eligibility_with_attendence_and_CA_details_by_student_id('TG0004');
