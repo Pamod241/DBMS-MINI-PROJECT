@@ -210,7 +210,7 @@ CALL Eligibility_with_attendence_and_CA_details();
 
 DROP PROCEDURE IF EXISTS Eligibility_with_attendence_and_CA_details_by_student_id;
 DELIMITER //
-CREATE PROCEDURE Eligibility_with_attendence_and_CA_details (IN stu_num VARCHAR(10))
+CREATE PROCEDURE Eligibility_with_attendence_and_CA_details_by_student_id (IN stu_num VARCHAR(10))
 BEGIN
  SELECT student_id,course_code,Both_Attendence_and_CA_Eligibility
  FROM Eligibility_with_attendence_and_CA
