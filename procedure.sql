@@ -187,3 +187,20 @@ DELIMITER ;
 
 
 CALL attendence_details('TG0004');
+
+
+--  Eligibility_with_attendence_and_CA for WHOLE BATCH
+
+DROP PROCEDURE IF EXISTS Eligibility_with_attendence_and_CA_details;
+DELIMITER //
+CREATE PROCEDURE Eligibility_with_attendence_and_CA_details ()
+BEGIN
+ SELECT student_id,course_code,Both_Attendence_and_CA_Eligibility
+ FROM Eligibility_with_attendence_and_CA;
+END //
+DELIMITER ;
+
+
+CALL Eligibility_with_attendence_and_CA_details();
+
+
