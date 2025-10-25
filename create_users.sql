@@ -23,13 +23,13 @@ CREATE USER 'Student'@'localhost' IDENTIFIED BY 'studentpwd';
 
 -- PRIVILAGES AND GRANT OPTION --
 
-GRANT ALL PRIVILEGES ON *.* TO 'Admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON FacultyDB.* TO 'Admin'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 
-GRANT ALL PRIVILEGES ON *.* TO 'Dean'@'localhost';
+GRANT ALL PRIVILEGES ON FacultyDB.* TO 'Dean'@'localhost';
 FLUSH PRIVILEGES;
 
-GRANT ALL PRIVILEGES ON *.* TO 'Lecturer'@'localhost';
+GRANT ALL PRIVILEGES ON FacultyDB.* TO 'Lecturer'@'localhost';
 FLUSH PRIVILEGES;
 
 GRANT SELECT,INSERT,UPDATE ON FacultyDB.attendence TO 'Technical_Officer'@'localhost';
