@@ -204,3 +204,18 @@ DELIMITER ;
 CALL Eligibility_with_attendence_and_CA_details();
 
 
+
+--  Eligibility_with_attendence_and_CA for GIVEN STUDENT ID
+
+DROP PROCEDURE IF EXISTS Eligibility_with_attendence_and_CA_details;
+DELIMITER //
+CREATE PROCEDURE Eligibility_with_attendence_and_CA_details (IN stu_num VARCHAR(10))
+BEGIN
+ SELECT student_id,course_code,Both_Attendence_and_CA_Eligibility
+ FROM Eligibility_with_attendence_and_CA
+ WHERE student_id=stu_num;
+END //
+DELIMITER ;
+
+
+CALL Eligibility_with_attendence_and_CA_details('TG0004');
