@@ -151,4 +151,19 @@ CREATE VIEW Attendence_Eligibility_OR_NOT AS
 
 
 
+-- Eligibility_with_attendence_and_CA
+
+
+drop view if exists Eligibility_with_attendence_and_CA;
+CREATE VIEW Eligibility_with_attendence_and_CA AS
+
+select r.student_id as student_id ,r.course_code as course_code,r.CA_Eligibility AS CA_Eligibility,a.Eligibility AS Att_Eligibility,
+
+ 
+   IF(r.CA_Eligibility ='EL' AND a.Eligibility='Eligible','Eligible', 'Not Eligible') AS Both_Attendence_and_CA_Eligibility
+
+from Result r
+
+INNER join Attendence_Eligibility_OR_NOT a ON r.student_id=a.student_id AND r.course_code= a.course_code ;
+
 
