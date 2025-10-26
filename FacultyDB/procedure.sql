@@ -45,7 +45,7 @@ CALL marks_details_by_student_id('TG0001');
 DROP PROCEDURE IF EXISTS marks_grade_details;
 DELIMITER //
 
-CREATE PROCEDURE marks_grade_details_()
+CREATE PROCEDURE marks_grade_details()
 BEGIN
 
 SELECT student_id,course_code, Final_Marks,Grade,Grade_Point
